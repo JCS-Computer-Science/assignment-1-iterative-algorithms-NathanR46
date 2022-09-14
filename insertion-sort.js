@@ -1,18 +1,14 @@
 function insertionSort(array) {
-	// start code to help me swap elements
-	console.log(array);
-	if (array[0] > array[1]) {
-		let swapElement = array[0] 
-		array[0] = array[1];
-		array[1] = swapElement;
-		console.log("Swapped!");
+	let arrayLength = array.length;
+	for(index = 1; index < arrayLength; index += 1){
+		let element = array[index];
+		let smallerArray = index - 1;
+		while (smallerArray > -1 && element < array[smallerArray]){
+			array[smallerArray + 1] = array[smallerArray];
+			smallerArray -= 1;
+		}
+		array[smallerArray + 1] = element;
 	}
-	/*
-	 ** For each element in the array, swap it with the element
-	 ** before it over and over as long as the element before it
-	 ** is bigger
-	 */
-
 	return array;
 }
 
