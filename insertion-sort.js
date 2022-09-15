@@ -5,7 +5,7 @@ function insertionSort(array) {
 
 	// This goes through each element in the array until the index reaches the array's length which means 
 	// its gone through every element and inserted it
-	for(index = 1; index < arrayLength; index += 1){
+	for (index = 1; index < arrayLength; index += 1) {
 		// This takes the next element in the array
 		// The index is 1 to begin so it separates the first element 
 		// into the sorted section and looks at index 1 (the second element) 
@@ -19,7 +19,7 @@ function insertionSort(array) {
 		// is greater than the sorted element before it (-1) and is also
 		// greater than the current element from the unsorted array (element),
 		// then it will go through this while loop
-		while (lastSorted > -1 && element < array[lastSorted]){
+		while (lastSorted > -1 && element < array[lastSorted]) {
 			// This changes the spot where the current element is and changes it to the last element
 			// in the sorted array. It basically shifted the element over into the unsorted section but the for loop
 			// will ignore it because it will look at the index after where the current element was.
