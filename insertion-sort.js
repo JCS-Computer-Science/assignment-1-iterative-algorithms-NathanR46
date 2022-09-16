@@ -31,7 +31,6 @@ function insertionSort(array) {
 			// smaller than the new lastSorted, then it will go through the while loop again until the current element is 
 			// greater than lastSorted. It is kinda hard to explain without a diagram or something but I know how it works now
 			lastSorted -= 1;
-			console.log(lastSorted);
 		}
 		// This finally places the current element inside the sorted array and the for loop goes 
 		// to the next index after where the current element was
