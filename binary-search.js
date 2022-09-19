@@ -14,25 +14,29 @@ function binarySearch(array, searchTerm) {
 		// so that it can eliminate half the array later if checkElement /= searchTerm
 		arrayLength = array.length;
 		divideArray = arrayLength / 2;
-		// I need to round this so that it searches an actual index rather than a decimal index
-		roundArray = Math.round(divideArray);
+		// I need to round this down so that it searches an actual index rather than a decimal index
+		roundArray = Math.floor(divideArray);
+		let middle = roundArray;
 		// This finally checks if it is the right index or not
-		checkElement = array[roundArray];
+		checkElement = array[middle];
 		// if it is equal to the search term, it will take the element and put it into the unaffected
 		// array and return that index rather than returning an index that doesn't exist in the array that was changed
 		if (checkElement == searchTerm) {
 			let index = clonedArray.indexOf(checkElement);
+			console.log(array);
+			console.log(clonedArray);
+			console.log("It finally works yay");
 			return index;
 		}
 		// This takes the last half of the array and deletes it since the 
 		// middle of the array is greater than the searchTerm
 		if (checkElement > searchTerm) {
-			array.splice(-roundArray);
+			array.splice(-middle);
 		}
 		// This takes this first half of the array and deletes all of those indexes 
 		// with the middle index we got earlier since the middle of the array is less than the searchTerm
 		if (checkElement < searchTerm) {
-			for (let i = 0; i < roundArray; i += 1) {
+			for (let i = 0; i < middle; i += 1) {
 				let deleteFirstHalf = array.shift();
 			}
 		}
